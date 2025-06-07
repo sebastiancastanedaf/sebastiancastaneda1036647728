@@ -40,9 +40,9 @@ def actualizar_producto(id):
     data = request.json
     for producto in productos:
         if producto['id'] == id:
-            producto['nombre'] = data['nombre']
-            producto['descripcion'] = data['descripcion']
-            producto['precio'] = data['precio']
+            producto['nombreProducto'] = data['nombreProducto']
+            producto['descripcionProducto'] = data['descripcionProducto']
+            producto['precioProducto'] = data['precioProducto']
             return jsonify(producto)
     return jsonify({'error': 'No encontrado'}), 404
 
