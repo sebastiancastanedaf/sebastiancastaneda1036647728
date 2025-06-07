@@ -26,3 +26,5 @@ jobs:
     - name: Run tests
       run: |
         pytest
+
+# Este es el archivo principal de la API Flask para productos de monitoreo satelital
