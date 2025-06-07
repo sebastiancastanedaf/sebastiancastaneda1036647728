@@ -40,9 +40,9 @@ def actualizar_producto(id):
     data = request.json
     for producto in productos:
         if producto['id'] == id:
-            producto['nombreProducto'] = data['nombreProducto']
-            producto['descripcionProducto'] = data['descripcionProducto']
-            producto['precioProducto'] = data['precioProducto']
+            producto['nombre'] = data['nombre']
+            producto['descripcion'] = data['descripcion']
+            producto['precio'] = data['precio']
             return jsonify(producto)
     return jsonify({'error': 'No encontrado'}), 404
 
@@ -53,5 +53,6 @@ def eliminar_producto(id):
     productos = [p for p in productos if p['id'] != id]
     return jsonify({'mensaje': 'Producto eliminado'})
 
+# CRUD de productos de monitoreo satelital
 if __name__ == '__main__':
     app.run(debug=True)
